@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+.flex-right {
+  margin-left: auto;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #2d1557;
+  border-color: #2d1557;
+}
+
+.page-item.active .page-link {
+  background-color: #2d1557;
+  border-color: #2d1557;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #482e74;
+  border-color: #482e74;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #482e74;
+  border-color: #482e74;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #ffffff;
+  background-color: #bab3c7;
+  border-color: #674f91 #dee2e6 #674f91;
+}
+
+a {
+  color: #19063a;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #8d79ae;
+}
+
+
+body{
+    margin-bottom: 40px;
+}
+
+.row{
+  margin-right: 0;
+  margin-left: 0;
+}

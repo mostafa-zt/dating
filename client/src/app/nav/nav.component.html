@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top nav-color">
+    <div class="container">
+        <div (click)="openSidebar()" id="sidebar_btn" class="pull-left">
+            <div class="sidebarBtn"></div>
+            <div class="sidebarBtn"></div>
+            <div class="sidebarBtn"></div>
+        </div>
+        <app-sidebar [showSidebar]="sidebarIsOpen" (sidebarStateChanged)="openSidebar()"></app-sidebar>
+        <a class="navbar-brand" routerLink='/' routerLinkActive='active'>Dating App</a>
+        <div class="navbar-m navbar-menu">
+            <ng-container *ngIf="currentUser$ | async">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink='/members' routerLinkActive='active'>Matches</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink='/list' routerLinkActive='active'>Lists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" routerLink='/messages' routerLinkActive='active'>Messages</a>
+                    </li>
+                    <li class="nav-item" *appHasRole='["Admin","Moderator"]'>
+                        <a class="nav-link disabled" routerLink='/admin' routerLinkActive='active'>Admin</a>
+                    </li>
+                </ul>
+            </ng-container>
+
+            <div class="dropdown flex-right" *ngIf="currentUser$ | async" dropdown>
+                <img src="{{(currentUser$ | async).photoUrl}}" alt="{{(currentUser$ | async).photoUrl}}" class="user-img" />
+                <a class="dropdown-toggle" dropdownToggle>Welcome {{((currentUser$ | async).knownAs |
+                    titlecase) || ((currentUser$ |async).username | titlecase) }}</a>
+                <ul class="dropdown-menu" *dropdownMenu>
+                    <li><a routerLink="/member/edit/" class="dropdown-item" href="#">Profile</a></li>
+                    <div class="dropdown-devider"></div>
+                    <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+                </ul>
+            </div>
+
+            <form *ngIf="(currentUser$ | async) === null" #form="ngForm" (ngSubmit)="login()"
+                class="d-flex mt-2 mt-md-0 right-align flex-right" autocomplete="off">
+                <input class="form-control mr-sm-2" type="text" placeholder="Username" name="username"
+                    [(ngModel)]="model.username">
+                <input class="form-control mr-sm-2" type="password" placeholder="Password" name="password"
+                    [(ngModel)]="model.password">
+                <button class="btn btn-outline-success" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</nav>

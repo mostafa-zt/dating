@@ -1,0 +1,21 @@
+img.img-thumbnail {
+  height: 100px;
+  min-width: 100px !important;
+  margin-bottom: 2px;
+}
+
+.nv-file-over {
+  border: dotted 3px red;
+}
+
+input[type="file"] {
+  color: transparent;
+}
+
+.section{
+  background-color: #cec6dc;
+  padding: 5px 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px;
+  margin: 20px 5px;
+}

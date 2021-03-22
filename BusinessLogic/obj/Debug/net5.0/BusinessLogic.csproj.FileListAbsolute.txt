@@ -1,0 +1,17 @@
+D:\Projects\DatingApp\BusinessLogic\obj\Debug\net5.0\BusinessLogic.csprojAssemblyReference.cache
+D:\Projects\DatingApp\BusinessLogic\obj\Debug\net5.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\DatingApp\BusinessLogic\obj\Debug\net5.0\BusinessLogic.AssemblyInfoInputs.cache
+D:\Projects\DatingApp\BusinessLogic\obj\Debug\net5.0\BusinessLogic.AssemblyInfo.cs
+D:\Projects\DatingApp\BusinessLogic\obj\Debug\net5.0\BusinessLogic.csproj.CoreCompileInputs.cache
+D:\Projects\DatingApp\BusinessLogic\bin\Debug\net5.0\BusinessLogic.deps.json
+D:\Projects\DatingApp\BusinessLogic\bin\Debug\net5.0\BusinessLogic.dll
+D:\Projects\DatingApp\BusinessLogic\bin\Debug\net5.0\ref\BusinessLogic.dll
+D:\Projects\DatingApp\BusinessLogic\bin\Debug\net5.0\BusinessLogic.pdb
+D:\Projects\DatingApp\BusinessLogic\bin\Debug\net5.0\DAL.dll
+D:\Projects\DatingApp\BusinessLogic\bin\Debug\net5.0\Entity.dll
+D:\Projects\DatingApp\BusinessLogic\bin\Debug\net5.0\Entity.pdb
+D:\Projects\DatingApp\BusinessLogic\bin\Debug\net5.0\DAL.pdb
+D:\Projects\DatingApp\BusinessLogic\obj\Debug\net5.0\BusinessLogic.csproj.CopyComplete
+D:\Projects\DatingApp\BusinessLogic\obj\Debug\net5.0\BusinessLogic.dll
+D:\Projects\DatingApp\BusinessLogic\obj\Debug\net5.0\ref\BusinessLogic.dll
+D:\Projects\DatingApp\BusinessLogic\obj\Debug\net5.0\BusinessLogic.pdb

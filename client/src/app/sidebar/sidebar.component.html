@@ -1,0 +1,33 @@
+<div *ngIf="showSidebar" id="sidebar_backdrop" (click)="show()"></div>
+<div id="sidebar" [class.open]="(showSidebar === true)" >
+
+    <div class="dropdown flex-left text-center" *ngIf="currentUser$ | async" dropdown>
+        <img src="{{(currentUser$ | async).photoUrl}}" alt="{{(currentUser$ | async).photoUrl}}" class="user-img"/>
+        <a class="dropdown-toggle" dropdownToggle>Welcome {{((currentUser$ | async).knownAs |
+            titlecase) || ((currentUser$ |async).username | titlecase) }}</a>
+        <ul class="dropdown-menu" *dropdownMenu>
+            <li><a (click)="show()" routerLink="/member/edit/" class="dropdown-item" href="#">Profile</a></li>
+            <div class="dropdown-devider"></div>
+            <li><a (click)="show()" class="dropdown-item" (click)="logout()">Logout</a></li>
+        </ul>
+    </div>
+
+    <ng-container *ngIf="currentUser$ | async">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a (click)="show()" class="nav-link active" routerLink='/members' routerLinkActive='active'>Matches</a>
+            </li>
+            <li class="nav-item">
+                <a (click)="show()" class="nav-link" routerLink='/list' routerLinkActive='active'>Lists</a>
+            </li>
+            <li class="nav-item">
+                <a (click)="show()" class="nav-link disabled" routerLink='/messages' routerLinkActive='active'>Messages</a>
+            </li>
+            <li class="nav-item" *appHasRole='["Admin","Moderator"]'>
+                <a (click)="show()" class="nav-link disabled" routerLink='/admin' routerLinkActive='active'>Admin</a>
+            </li>
+        </ul>
+    </ng-container>
+
+   
+</div>

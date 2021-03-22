@@ -1,0 +1,9 @@
+.tab-pane{
+    padding: 10px 15px;
+}
+
+.tab-box{
+    border-radius: 5px;
+    padding: 2px 2px;
+    box-shadow: 1px 1px 10px;
+}
