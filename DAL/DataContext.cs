@@ -33,8 +33,8 @@ namespace DAL
             modelBuilder.Entity<AppRole>().HasMany(x => x.UserRoles).WithOne(x => x.Role).HasForeignKey(x => x.RoleId).IsRequired();
 
             modelBuilder.Entity<UserLike>().HasKey(x => new { x.SourceUserId, x.LikedUserId });
-            modelBuilder.Entity<UserLike>().HasOne(s => s.SourceUser).WithMany(l => l.LikedUsers).HasForeignKey(x => x.SourceUserId).OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<UserLike>().HasOne(s => s.LikedUser).WithMany(l => l.LikedByUsers).HasForeignKey(x => x.LikedUserId).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<UserLike>().HasOne(s => s.SourceUser).WithMany(l => l.LikedUsers).HasForeignKey(x => x.SourceUserId).OnDelete(DeleteBehavior.ClientCascade);
+            modelBuilder.Entity<UserLike>().HasOne(s => s.LikedUser).WithMany(l => l.LikedByUsers).HasForeignKey(x => x.LikedUserId).OnDelete(DeleteBehavior.ClientCascade);
 
             modelBuilder.Entity<Message>().HasOne(s => s.Recipient).WithMany(l => l.MessagesReceived).HasForeignKey(x => x.RecipientId).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<Message>().HasOne(s => s.Sender).WithMany(l => l.MessagesSent).HasForeignKey(x => x.SenderId).OnDelete(DeleteBehavior.Restrict);

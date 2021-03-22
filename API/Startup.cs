@@ -16,6 +16,7 @@ using BusinessLogic.Repositories;
 using Entity;
 using Microsoft.AspNetCore.Identity;
 using API.SignalR;
+using System;
 
 namespace API
 {
@@ -56,10 +57,21 @@ namespace API
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 
-            services.AddDbContext<DataContext>(options =>
+            var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            if (env == "Development")
             {
-                options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
-            });
+                services.AddDbContext<DataContext>(options =>
+                {
+                    options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
+                });
+            }
+            else
+            {
+                services.AddDbContext<DataContext>(options =>
+                {
+                    options.UseSqlServer(_config.GetConnectionString("DefaultConnection"));
+                });
+            }
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -135,7 +147,7 @@ namespace API
                 endpoints.MapControllers();
                 endpoints.MapHub<PresenceHub>("hubs/presence");
                 endpoints.MapHub<MessageHub>("hubs/message");
-                endpoints.MapFallbackToController("Index","Fallback");
+                endpoints.MapFallbackToController("Index", "Fallback");
             });
         }
     }
