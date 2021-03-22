@@ -19,7 +19,6 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError(error => {
         if (error) {
-          debugger;
           switch (error.status) {
             case 400:
               if (Array.isArray(error.error)) {
@@ -55,7 +54,6 @@ export class ErrorInterceptor implements HttpInterceptor {
               break;
             default:
               this.toastr.error('Something unexpected went wrong!');
-              console.log(error);
               break;
           }
         }

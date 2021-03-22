@@ -47,21 +47,15 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    debugger;
-    console.log(this.registerForm.value);
     this.accountService.register(this.registerForm.value).subscribe(response => {
-      console.log(response);
       this.router.navigateByUrl('/members');
       // this.cancel();
     }, error => {
-      debugger;
-      console.log(error);
       this.validationErrors = error;
     })
   }
 
   cancel() {
-    console.log('cancelled!');
     this.cancelRegister.emit(false);
   }
 

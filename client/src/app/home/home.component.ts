@@ -14,9 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient, private accountService: AccountService) { }
 
   ngOnInit(): void {
-    debugger;
     this.accountService.currentUser$.subscribe(user => {
-      debugger;
       this.isAuthenticated = !!user;
     })
   }
