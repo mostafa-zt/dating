@@ -2,6 +2,7 @@ bin
 obj
 DS_Store
 .vscode/
+.vs/
 wwwroot/
 .vs/
 node_modules/
@@ -9,3 +10,4 @@ datingapp.db
 appsettings.json
 UserSeedData.json
 Migrations/
+publish/
