@@ -1,4 +1,4 @@
-Recipe Mini Project with Angular
+Dating App Mini Project with .NET Core and Angular
 
 Technologies and frameworks:
 
